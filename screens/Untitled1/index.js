@@ -1,11 +1,16 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { Text } from "react-native";
 import React from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.safeArea}>
         
-    <Text style={styles.kpwVUzJV}>Lorem ipsum…</Text></SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("manyRows");
+    }}><Text style={styles.kpwVUzJV}>Nav to list</Text></Pressable></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
