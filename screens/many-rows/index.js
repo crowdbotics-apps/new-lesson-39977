@@ -16,8 +16,8 @@ const Row = ({
       <View style={styles.row}>
         <View style={styles.rowContent}>
           <Text style={styles.textHeading1}>{item?.title}</Text>
-          <Text style={styles.textHeading2}>Heading 2</Text>
-          <Text style={styles.textHeading3}>Heading 3</Text>
+          <Text style={styles.textHeading2}>{item?.rating}</Text>
+          <Text style={styles.textHeading3}>{item?.cook_time}</Text>
           <Text style={styles.textHeading4}>Heading 4</Text>
           <Text style={styles.textDescription}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
