@@ -12,7 +12,7 @@ const Row = ({
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails", {
-      id: item.id
+      itemID: item.id
     });
   }}>
       <View style={styles.row}>
