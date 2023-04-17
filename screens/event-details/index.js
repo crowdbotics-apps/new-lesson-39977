@@ -4,7 +4,12 @@ import { useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { Text, View, StyleSheet, ScrollView, Image, Pressable } from "react-native";
 
-const EventDetails = ({}) => {
+const EventDetails = ({
+  route
+}) => {
+  const {
+    itemID
+  } = route.params || {};
   const {
     entities: Recipes
   } = useSelector(state => state.Recipes);
@@ -20,7 +25,7 @@ const EventDetails = ({}) => {
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat tellus a mattis ornare. Fusce sit amet libero id est iaculis hendrerit in quis nibh. \n \nProin porttitor velit nec purus consequat hendrerit. Aenean vel volutpat metus. Ut ullamcorper arcu tellus, non semper nisl lobortis vitae. Nulla sit amet risus risus. Vestibulum euismod accumsan nulla."
     });
     dispatch(api_v1_recipe_retrieve({
-      id: 1
+      id: itemID
     }));
   }, []);
   return <View style={styles.container}>
