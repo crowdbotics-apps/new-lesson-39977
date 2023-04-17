@@ -1,5 +1,3 @@
-import { api_v1_recipe_list } from "../../store/newlessonAPI/recipes.slice.js";
-import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
@@ -7,7 +5,6 @@ import React, { useEffect } from "react";
 import { FlatList, Text, View, StyleSheet } from "react-native";
 
 const Row = ({}) => {
-  const dispatch = useDispatch();
   const {
     entities: Recipe
   } = useSelector(state => state.Recipe);
@@ -50,7 +47,6 @@ const ManyRows = () => {
       id: 5,
       name: "Row 5"
     }]);
-    dispatch(api_v1_recipe_list());
   }, []);
   return <View style={styles.container}>
       <FlatList data={data} renderItem={({
