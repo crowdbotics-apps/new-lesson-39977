@@ -6,8 +6,8 @@ import { Text, View, StyleSheet, ScrollView, Image, Pressable } from "react-nati
 
 const EventDetails = ({}) => {
   const {
-    entities: item
-  } = useSelector(state => state.item);
+    entities: Recipes
+  } = useSelector(state => state.Recipes);
   const dispatch = useDispatch();
   const [event, setEvent] = useState({});
   useEffect(() => {
@@ -30,7 +30,7 @@ const EventDetails = ({}) => {
         <View style={styles.body}>
           <View style={styles.header}>
             <View style={styles.details}>
-              <Text style={styles.name}>{item?.name}</Text>
+              <Text style={styles.name}>{Recipes[0].title}</Text>
               <View style={styles.location}>
                 <Image source={require("./assets/locationIcon.png")} style={styles.locationIcon} />
                 <Text style={styles.locationText}>
