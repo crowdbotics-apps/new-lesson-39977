@@ -1,17 +1,19 @@
+import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import React, { useEffect } from "react";
 import { FlatList, Text, View, StyleSheet } from "react-native";
 
-const Row = ({
-  item
-}) => {
+const Row = ({}) => {
+  const {
+    entities: Recipe
+  } = useSelector(state => state.Recipe);
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails");
   }}><View style={styles.row}>
         <View style={styles.rowContent}>
-          <Text style={styles.textHeading1}>{item.name}</Text>
+          <Text style={styles.textHeading1}>{Recipe.title}</Text>
           <Text style={styles.textHeading2}>Heading 2</Text>
           <Text style={styles.textHeading3}>Heading 3</Text>
           <Text style={styles.textHeading4}>Heading 4</Text>
