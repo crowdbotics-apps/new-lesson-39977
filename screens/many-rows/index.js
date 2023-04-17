@@ -16,7 +16,7 @@ const Row = ({}) => {
   }}>
       <View style={styles.row}>
         <View style={styles.rowContent}>
-          <Text style={styles.textHeading1}>{Recipes[0].title}</Text>
+          <Text style={styles.textHeading1}>{Recipes?.[0]?.title}</Text>
           <Text style={styles.textHeading2}>Heading 2</Text>
           <Text style={styles.textHeading3}>Heading 3</Text>
           <Text style={styles.textHeading4}>Heading 4</Text>
