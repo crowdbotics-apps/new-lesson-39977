@@ -14,15 +14,21 @@ const Row = ({}) => {
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails");
-  }}><View style={styles.row}>
+  }}>
+      <View style={styles.row}>
         <View style={styles.rowContent}>
           <Text style={styles.textHeading1}>{Recipe.title}</Text>
           <Text style={styles.textHeading2}>Heading 2</Text>
           <Text style={styles.textHeading3}>Heading 3</Text>
           <Text style={styles.textHeading4}>Heading 4</Text>
-          <Text style={styles.textDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</Text>
+          <Text style={styles.textDescription}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry standard dummy text ever
+            since the 1500s
+          </Text>
         </View>
-      </View></Pressable>;
+      </View>
+    </Pressable>;
 };
 
 const ManyRows = () => {
@@ -45,7 +51,6 @@ const ManyRows = () => {
       name: "Row 5"
     }]);
     dispatch(api_v1_recipe_list());
-    dispatch(api_v1_recipe_list({}));
   }, []);
   return <View style={styles.container}>
       <FlatList data={data} renderItem={({
