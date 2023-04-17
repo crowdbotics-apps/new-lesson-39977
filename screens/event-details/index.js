@@ -30,7 +30,7 @@ const EventDetails = ({}) => {
         <View style={styles.body}>
           <View style={styles.header}>
             <View style={styles.details}>
-              <Text style={styles.name}>{Recipes[0].title}</Text>
+              <Text style={styles.name}>{Recipes?.title}</Text>
               <View style={styles.location}>
                 <Image source={require("./assets/locationIcon.png")} style={styles.locationIcon} />
                 <Text style={styles.locationText}>
