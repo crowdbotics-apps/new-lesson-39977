@@ -27,7 +27,7 @@ const EventDetails = ({
     dispatch(api_v1_recipe_retrieve({
       id: itemID
     }));
-  }, []);
+  }, [itemID]);
   return <View style={styles.container}>
       <ScrollView>
         <Image source={require("./assets/image.png")} style={styles.image} />
