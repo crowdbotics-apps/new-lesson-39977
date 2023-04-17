@@ -6,17 +6,16 @@ import { Pressable } from "react-native";
 import React, { useEffect } from "react";
 import { FlatList, Text, View, StyleSheet } from "react-native";
 
-const Row = ({}) => {
-  const {
-    entities: Recipes
-  } = useSelector(state => state.Recipes);
+const Row = ({
+  item
+}) => {
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails");
   }}>
       <View style={styles.row}>
         <View style={styles.rowContent}>
-          <Text style={styles.textHeading1}>{Recipes?.[0]?.title}</Text>
+          <Text style={styles.textHeading1}>{item?.title}</Text>
           <Text style={styles.textHeading2}>Heading 2</Text>
           <Text style={styles.textHeading3}>Heading 3</Text>
           <Text style={styles.textHeading4}>Heading 4</Text>
@@ -31,6 +30,9 @@ const Row = ({}) => {
 };
 
 const ManyRows = () => {
+  const {
+    entities: Recipes
+  } = useSelector(state => state.Recipes);
   const dispatch = useDispatch();
   const [data, setData] = React.useState();
   useEffect(() => {
@@ -53,7 +55,7 @@ const ManyRows = () => {
     dispatch(api_v1_recipe_list());
   }, []);
   return <View style={styles.container}>
-      <FlatList data={data} renderItem={({
+      <FlatList data={Recipes} renderItem={({
       item
     }) => <Row item={item} />} keyExtractor={item => item.id} />
     </View>;
