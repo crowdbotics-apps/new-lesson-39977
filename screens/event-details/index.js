@@ -1,9 +1,13 @@
+import { useSelector } from "react-redux";
 import { api_v1_recipe_list } from "../../store/newlessonAPI/recipes.slice.js";
 import { useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { Text, View, StyleSheet, ScrollView, Image, Pressable } from "react-native";
 
-const EventDetails = () => {
+const EventDetails = ({}) => {
+  const {
+    entities: item
+  } = useSelector(state => state.item);
   const dispatch = useDispatch();
   const [event, setEvent] = useState({});
   useEffect(() => {
@@ -24,7 +28,7 @@ const EventDetails = () => {
         <View style={styles.body}>
           <View style={styles.header}>
             <View style={styles.details}>
-              <Text style={styles.name}>{event.name}</Text>
+              <Text style={styles.name}>{item?.name}</Text>
               <View style={styles.location}>
                 <Image source={require("./assets/locationIcon.png")} style={styles.locationIcon} />
                 <Text style={styles.locationText}>
