@@ -7,17 +7,16 @@ import React, { useEffect } from "react";
 import { FlatList, Text, View, StyleSheet } from "react-native";
 
 const Row = ({}) => {
-  const dispatch = useDispatch();
   const {
-    entities: Recipe
-  } = useSelector(state => state.Recipe);
+    entities: Recipes
+  } = useSelector(state => state.Recipes);
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails");
   }}>
       <View style={styles.row}>
         <View style={styles.rowContent}>
-          <Text style={styles.textHeading1}>{Recipe.title}</Text>
+          <Text style={styles.textHeading1}>{Recipes[0].title}</Text>
           <Text style={styles.textHeading2}>Heading 2</Text>
           <Text style={styles.textHeading3}>Heading 3</Text>
           <Text style={styles.textHeading4}>Heading 4</Text>
