@@ -60,7 +60,7 @@ const ManyRows = () => {
       <FlatList data={Recipes} renderItem={({
       item
     }) => <Row item={item} />} keyExtractor={item => item.id} />
-    </View>;
+    <Text style={styles.tbkuVFTK}>Lorem ipsum…</Text></View>;
 };
 
 const styles = StyleSheet.create({
@@ -96,6 +96,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "400",
     color: "#333"
+  },
+  tbkuVFTK: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default ManyRows;

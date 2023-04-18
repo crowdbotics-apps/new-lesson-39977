@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { api_v1_recipe_retrieve } from "../../store/newlessonAPI/recipes.slice.js";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -7,6 +8,7 @@ import { Text, View, StyleSheet, ScrollView, Image, Pressable } from "react-nati
 const EventDetails = ({
   route
 }) => {
+  const navigation = useNavigation();
   const {
     itemID
   } = route.params || {};
@@ -43,7 +45,9 @@ const EventDetails = ({
                 </Text>
               </View>
             </View>
-            <Pressable style={styles.roundButton}>
+            <Pressable style={styles.roundButton} onPress={() => {
+            navigation.navigate("Untitled4");
+          }}>
               <Image source={require("./assets/giftIcon.png")} style={styles.giftIcon} />
               <Text style={styles.btnText}>Donate</Text>
             </Pressable>
