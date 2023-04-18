@@ -23,7 +23,7 @@ const AddCardDetailsScreen = () => {
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Recipe</Text>
-            <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value="recipe" placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value="recipe" placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} clearTextOnFocus={true} editable={true} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Instuctions</Text>
