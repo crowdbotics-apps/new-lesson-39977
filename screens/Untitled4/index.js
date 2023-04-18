@@ -9,12 +9,22 @@ import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 const Untitled4 = () => {
   const dispatch = useDispatch();
   return <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={{
-      backgroundColor: '#f0f0f1',
+      <ScrollView contentContainerStyle={{
+      backgroundColor: "#f0f0f1",
       padding: 10,
-      position: 'relative',
+      position: "relative",
       flex: 1
-    }}><TextInput style={styles.DlpCZwyY} value="title" placeholder="title"></TextInput><TextInput style={styles.qnDBOseA} value="instructions" placeholder="instructions"></TextInput><TextInput style={styles.YoeRUnmA} value="prep_time"></TextInput><TextInput style={styles.szJrrPKB} value="cook_time" placeholder="cook_time"></TextInput><TextInput style={styles.afmtOhRw} value="rating" placeholder="rating"></TextInput><TextInput style={styles.XsVmWJJX} value="image" placeholder="image"></TextInput><Pressable onPress={onSubmit}><View style={styles.adVcCPOj}></View></Pressable></ScrollView>
+    }}>
+        <TextInput style={styles.DlpCZwyY} value="title" placeholder="title"></TextInput>
+        <TextInput style={styles.qnDBOseA} value="instructions" placeholder="instructions"></TextInput>
+        <TextInput style={styles.YoeRUnmA} value="prep_time"></TextInput>
+        <TextInput style={styles.szJrrPKB} value="cook_time" placeholder="cook_time"></TextInput>
+        <TextInput style={styles.afmtOhRw} value="rating" placeholder="rating"></TextInput>
+        <TextInput style={styles.XsVmWJJX} value="image" placeholder="image"></TextInput>
+        <Pressable onPress={onSubmit}>
+          <View style={styles.adVcCPOj}></View>
+        </Pressable>
+      </ScrollView>
     </SafeAreaView>;
 
   const onSubmit = () => {
@@ -31,7 +41,7 @@ const Untitled4 = () => {
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: '100%'
+    height: "100%"
   },
   DlpCZwyY: {
     backgroundColor: "#ffffff",
@@ -73,13 +83,13 @@ const styles = StyleSheet.create({
   adVcCPOj: {
     height: 60,
     width: 140,
-    backgroundColor: "#E4E4E4",
+    backgroundColor: "#3555ff",
     borderRadius: 0,
     color: "#777777"
   },
   BNQbbLDk: {
     position: "absolute",
-    backgroundColor: "#ffffff",
+    backgroundColor: "red",
     borderColor: "#cccccc",
     width: 150,
     height: 30
