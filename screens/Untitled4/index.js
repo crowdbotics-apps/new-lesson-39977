@@ -15,7 +15,7 @@ const Untitled4 = () => {
       position: "relative",
       flex: 1
     }}>
-        <TextInput style={styles.DlpCZwyY} value="title" placeholder="title"></TextInput>
+        <TextInput style={styles.DlpCZwyY} value="title" placeholder="title" editable={true}></TextInput>
         <TextInput style={styles.qnDBOseA} value="instructions" placeholder="instructions"></TextInput>
         <TextInput style={styles.YoeRUnmA} value="prep_time"></TextInput>
         <TextInput style={styles.szJrrPKB} value="cook_time" placeholder="cook_time"></TextInput>
