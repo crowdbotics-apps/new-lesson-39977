@@ -46,7 +46,7 @@ const EventDetails = ({
               </View>
             </View>
             <Pressable style={styles.roundButton} onPress={() => {
-            navigation.navigate("Untitled4");
+            navigation.navigate("addCardDetails");
           }}>
               <Image source={require("./assets/giftIcon.png")} style={styles.giftIcon} />
               <Text style={styles.btnText}>Donate</Text>
