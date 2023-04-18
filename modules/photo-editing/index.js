@@ -4,14 +4,17 @@ import React from "react";
 import { Provider } from "react-redux";
 import App from "./App";
 import rootReducer from "./Store";
+
 const store = configureStore({
   reducer: rootReducer
 });
 
 const PhotoEditing = () => {
-  return <Provider store={store}>
+  return (
+    <Provider store={store}>
       <App />
-    </Provider>;
+    </Provider>
+  );
 };
 
 export default {

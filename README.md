@@ -61,6 +61,7 @@ This section will show any installed modules you add from the Storyboard Modules
 - [react-native-push-notifications](modules/push-notifications)
 - [firebase-push-notifications]()
 - [react-native-live-camera-filters](modules/live-camera-filters)
+- [react-native-photo-editing](modules/photo-editing)
 
 # Getting started: Frontend
 
