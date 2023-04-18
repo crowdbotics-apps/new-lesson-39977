@@ -14,7 +14,7 @@ const Untitled4 = () => {
       padding: 10,
       position: 'relative',
       flex: 1
-    }}><TextInput style={styles.DlpCZwyY}></TextInput><TextInput style={styles.qnDBOseA}></TextInput><TextInput style={styles.YoeRUnmA}></TextInput><TextInput style={styles.szJrrPKB}></TextInput><TextInput style={styles.afmtOhRw}></TextInput><TextInput style={styles.XsVmWJJX}></TextInput><Pressable onPress={onSubmit}><View style={styles.adVcCPOj}></View></Pressable></ScrollView>
+    }}><TextInput style={styles.DlpCZwyY} value="title" placeholder="title"></TextInput><TextInput style={styles.qnDBOseA} value="instructions" placeholder="instructions"></TextInput><TextInput style={styles.YoeRUnmA} value="prep_time"></TextInput><TextInput style={styles.szJrrPKB} value="cook_time" placeholder="cook_time"></TextInput><TextInput style={styles.afmtOhRw} value="rating" placeholder="rating"></TextInput><TextInput style={styles.XsVmWJJX} value="image" placeholder="image"></TextInput><Pressable onPress={onSubmit}><View style={styles.adVcCPOj}></View></Pressable></ScrollView>
     </SafeAreaView>;
 
   const onSubmit = () => {
@@ -76,6 +76,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#E4E4E4",
     borderRadius: 0,
     color: "#777777"
+  },
+  BNQbbLDk: {
+    position: "absolute",
+    backgroundColor: "#ffffff",
+    borderColor: "#cccccc",
+    width: 150,
+    height: 30
   }
 });
 export default Untitled4;
