@@ -8,3 +8,6 @@ class Recipe(models.Model):
     prep_time = models.BigIntegerField()
     rating = models.BigIntegerField()
     image = models.CharField(max_length=256,)
+class RecipeCategory(models.Model):
+    'Generated Model'
+    name = models.CharField(max_length=256,)

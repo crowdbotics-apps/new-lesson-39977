@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Recipe
-from .serializers import RecipeSerializer
+from home.models import Recipe,RecipeCategory
+from .serializers import RecipeSerializer,RecipeCategorySerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Recipe.objects.all()
+
+class RecipeCategoryViewSet(viewsets.ModelViewSet):
+    serializer_class = RecipeCategorySerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = RecipeCategory.objects.all()
