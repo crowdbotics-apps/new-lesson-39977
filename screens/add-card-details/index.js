@@ -17,8 +17,8 @@ const AddCardDetailsScreen = () => {
     dispatch(api_v1_recipe_create({
       title,
       instructions,
-      prepTime,
-      cookTime,
+      prep_time: prepTime,
+      cook_time: cookTime,
       rating,
       image
     }));
@@ -29,6 +29,7 @@ const AddCardDetailsScreen = () => {
         <View style={styles.header}></View>
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
+            <Text style={styles.inputText}>Recipe add</Text>
             <Text style={styles.inputText}>Recipe title</Text>
             <TextInput style={styles.input} onChangeText={text => setTitle(text)} placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} value={title} clearTextOnFocus={true} editable={true} />
           </View>
