@@ -60,6 +60,7 @@ const AddCardDetailsScreen = () => {
 };
 
 const onSubmit = () => {
+  console.log("submited");
   dispatch(api_v1_recipe_create({
     title,
     instructions,
