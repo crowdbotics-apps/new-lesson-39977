@@ -5,69 +5,50 @@ import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable 
 
 const AddCardDetailsScreen = () => {
   const dispatch = useDispatch();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address1, setAddress1] = useState("");
-  const [address2, setAddress2] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
-  const [country, setCountry] = useState("");
-  const [cardExpiry, setCardExpiry] = useState("");
-  const [cvv, setCvv] = useState("");
+  const [recipe, setRecipe] = useState("");
+  const [instructions, setInstuctions] = useState("");
+  const [prepTime, setPrepTime] = useState("");
+  const [cookTime, setCookTime] = useState("");
+  const [rating, setRating] = useState("");
+  const [image, setImage] = useState("");
   return <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={styles.header}>
-          
-        </View>
+        <View style={styles.header}></View>
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Recipe</Text>
-            <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value="recipe" placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} clearTextOnFocus={true} editable={true} />
+            <TextInput style={styles.input} onChangeText={text => setRecipe(text)} value="recipe" placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} clearTextOnFocus={true} editable={true} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Instuctions</Text>
-            <TextInput style={styles.input} onChangeText={text => setLastName(text)} value="instructions" placeholder="Instructions" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setInstuctions(text)} value="instructions" placeholder="Instructions" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Prep time
-          </Text>
-            <TextInput style={styles.input} onChangeText={text => setAddress1(text)} value="prep_time" placeholder="Prep time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>Prep time</Text>
+            <TextInput style={styles.input} onChangeText={text => setPrepTime(text)} value="prepTime" placeholder="Prep time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Cook time</Text>
-            <TextInput style={styles.input} onChangeText={text => setAddress2(text)} value="cook_time" placeholder="Enter your Address" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} defaultValue="cook_time" />
+            <TextInput style={styles.input} onChangeText={text => setCookTime(text)} value="cookTime" placeholder="Cookt time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} defaultValue="cookTime" />
           </View>
         </View>
         <View style={styles.halfInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Rating</Text>
-            <TextInput style={styles.input} onChangeText={text => setCity(text)} value="rating" placeholder="rating" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setRating(text)} value="rating" placeholder="rating" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Image</Text>
-            <TextInput style={styles.input} onChangeText={text => setState(text)} value="image" placeholder="image" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setImage(text)} value="image" placeholder="image" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.halfInputs}>
-          <View style={styles.inputContainer}>
-            
-            
-          </View>
-          <View style={styles.inputContainer}>
-            
-            
-          </View>
+          <View style={styles.inputContainer}></View>
+          <View style={styles.inputContainer}></View>
         </View>
         <View style={styles.halfInputs}>
-          <View style={styles.inputContainer}>
-            
-            
-          </View>
-          <View style={styles.inputContainer}>
-            
-            
-          </View>
+          <View style={styles.inputContainer}></View>
+          <View style={styles.inputContainer}></View>
         </View>
         <View style={styles.btnContainer}>
           <Pressable style={styles.btn} onPress={onSubmit}>
@@ -81,8 +62,8 @@ const AddCardDetailsScreen = () => {
     dispatch(api_v1_recipe_create({
       title,
       instructions,
-      prep_time,
-      cook_time,
+      prepTime,
+      cookTime,
       rating,
       image
     }));
