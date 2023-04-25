@@ -57,17 +57,17 @@ const AddCardDetailsScreen = () => {
         </View>
       </ScrollView>
     </SafeAreaView>;
+};
 
-  const onSubmit = () => {
-    dispatch(api_v1_recipe_create({
-      title,
-      instructions,
-      prepTime,
-      cookTime,
-      rating,
-      image
-    }));
-  };
+const onSubmit = () => {
+  dispatch(api_v1_recipe_create({
+    title,
+    instructions,
+    prepTime,
+    cookTime,
+    rating,
+    image
+  }));
 };
 
 const styles = StyleSheet.create({
