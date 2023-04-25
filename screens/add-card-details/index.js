@@ -5,7 +5,7 @@ import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable 
 
 const AddCardDetailsScreen = () => {
   const dispatch = useDispatch();
-  const [recipe, setRecipe] = useState("");
+  const [title, setTitle] = useState("");
   const [instructions, setInstuctions] = useState("");
   const [prepTime, setPrepTime] = useState("");
   const [cookTime, setCookTime] = useState("");
@@ -17,7 +17,7 @@ const AddCardDetailsScreen = () => {
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Recipe</Text>
-            <TextInput style={styles.input} onChangeText={text => setRecipe(text)} placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} clearTextOnFocus={true} editable={true} />
+            <TextInput style={styles.input} onChangeText={text => setTitle(text)} placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} value={title} clearTextOnFocus={true} editable={true} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Instuctions</Text>
@@ -29,7 +29,7 @@ const AddCardDetailsScreen = () => {
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Cook time</Text>
-            <TextInput style={styles.input} onChangeText={text => setCookTime(text)} value={cookTime} placeholder="Cookt time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} defaultValue="cookTime" />
+            <TextInput style={styles.input} onChangeText={text => setCookTime(text)} value={cookTime} placeholder="Cookt time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.halfInputs}>
