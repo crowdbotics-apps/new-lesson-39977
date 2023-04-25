@@ -59,7 +59,6 @@ This react_native application was built with Crowdbotics www.crowdbotics.com
 
 This section will show any installed modules you add from the Storyboard Modules section.
 - [firebase-push-notifications]()
-- [react-native-live-camera-filters](modules/live-camera-filters)
 - [react-native-photo-editing](modules/photo-editing)
 
 # Getting started: Frontend

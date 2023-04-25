@@ -1896,17 +1896,10 @@
 "@modules/firebase-push-notifications@file:./modules/firebase-push-notifications":
   version "1.0.0"
 
-"@modules/live-camera-filters@file:./modules/live-camera-filters":
-  version "1.0.0"
-  dependencies:
-    "@react-native-community/cameraroll" "^4.1.2"
-    react-native-filter-camera "0.1.18"
-    react-native-vector-icons "^9.2.0"
-
 "@modules/photo-editing@file:./modules/photo-editing":
   version "1.0.0"
 
-"@react-native-community/cameraroll@4.1.2", "@react-native-community/cameraroll@^4.1.2":
+"@react-native-community/cameraroll@4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-4.1.2.tgz#489c6bb6137571540d93c543d5fcf8c652b548ec"
   integrity sha512-jkdhMByMKD2CZ/5MPeBieYn8vkCfC4MOTouPpBpps3I8N6HUYJk+1JnDdktVYl2WINnqXpQptDA2YptVyifYAg==
