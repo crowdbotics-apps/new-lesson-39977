@@ -11,12 +11,25 @@ const AddCardDetailsScreen = () => {
   const [cookTime, setCookTime] = useState("");
   const [rating, setRating] = useState("");
   const [image, setImage] = useState("");
+
+  const onSubmit = () => {
+    console.log("submited");
+    dispatch(api_v1_recipe_create({
+      title,
+      instructions,
+      prepTime,
+      cookTime,
+      rating,
+      image
+    }));
+  };
+
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}></View>
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Recipe</Text>
+            <Text style={styles.inputText}>Recipe title</Text>
             <TextInput style={styles.input} onChangeText={text => setTitle(text)} placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} value={title} clearTextOnFocus={true} editable={true} />
           </View>
           <View style={styles.inputContainer}>
@@ -57,18 +70,6 @@ const AddCardDetailsScreen = () => {
         </View>
       </ScrollView>
     </SafeAreaView>;
-};
-
-const onSubmit = () => {
-  console.log("submited");
-  dispatch(api_v1_recipe_create({
-    title,
-    instructions,
-    prepTime,
-    cookTime,
-    rating,
-    image
-  }));
 };
 
 const styles = StyleSheet.create({
