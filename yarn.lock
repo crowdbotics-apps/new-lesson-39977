@@ -1903,10 +1903,7 @@
     react-native-filter-camera "0.1.18"
     react-native-vector-icons "^9.2.0"
 
-"@modules/photo-editing@file:./modules/photo-editing/":
-  version "1.0.0"
-
-"@modules/push-notifications@file:./modules/push-notifications":
+"@modules/photo-editing@file:./modules/photo-editing":
   version "1.0.0"
 
 "@react-native-community/cameraroll@4.1.2", "@react-native-community/cameraroll@^4.1.2":
