@@ -17,29 +17,29 @@ const AddCardDetailsScreen = () => {
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Recipe</Text>
-            <TextInput style={styles.input} onChangeText={text => setRecipe(text)} value="recipe" placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} clearTextOnFocus={true} editable={true} />
+            <TextInput style={styles.input} onChangeText={text => setRecipe(text)} placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} clearTextOnFocus={true} editable={true} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Instuctions</Text>
-            <TextInput style={styles.input} onChangeText={text => setInstuctions(text)} value="instructions" placeholder="Instructions" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setInstuctions(text)} value={instructions} placeholder="Instructions" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Prep time</Text>
-            <TextInput style={styles.input} onChangeText={text => setPrepTime(text)} value="prepTime" placeholder="Prep time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setPrepTime(text)} value={prepTime} placeholder="Prep time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Cook time</Text>
-            <TextInput style={styles.input} onChangeText={text => setCookTime(text)} value="cookTime" placeholder="Cookt time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} defaultValue="cookTime" />
+            <TextInput style={styles.input} onChangeText={text => setCookTime(text)} value={cookTime} placeholder="Cookt time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} defaultValue="cookTime" />
           </View>
         </View>
         <View style={styles.halfInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Rating</Text>
-            <TextInput style={styles.input} onChangeText={text => setRating(text)} value="rating" placeholder="rating" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setRating(text)} value={rating} placeholder="rating" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Image</Text>
-            <TextInput style={styles.input} onChangeText={text => setImage(text)} value="image" placeholder="image" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <TextInput style={styles.input} onChangeText={text => setImage(text)} value={image} placeholder="image" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.halfInputs}>
