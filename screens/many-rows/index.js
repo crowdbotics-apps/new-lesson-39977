@@ -18,13 +18,7 @@ const Row = ({
   }}>
       <View style={styles.row}>
         <View style={styles.rowContent}>
-          <Text style={styles.textHeading1}>Title : {item?.title}</Text>
-          <Text style={styles.textHeading3}>Rating : {item?.rating}</Text>
-          <Text style={styles.textHeading4}>Prep time : {item?.prep_time} </Text>
-          <Text style={styles.textHeading4}>Cook time : {item?.cook_time}</Text>
-          <Text style={styles.textDescription}>
-            {item?.instructions} 
-          </Text>
+          <Text style={styles.textHeading1}>{item?.title}</Text>
         </View>
       </View>
     </Pressable>;
@@ -59,7 +53,6 @@ const ManyRows = () => {
       <FlatList data={Recipes} renderItem={({
       item
     }) => <Row item={item} />} keyExtractor={item => item.id} />
-      <Text style={styles.tbkuVFTK}>Lorem ipsum…</Text>
     </View>;
 };
 
