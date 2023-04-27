@@ -23,8 +23,7 @@ const EventDetails = ({
   }, [selectedRecipe]);
   return <View style={styles.container}>
       <ScrollView>
-        <Image source={require("./assets/image.png")} style={styles.image} />
-        <Image style={styles.scroller} source={require("./assets/Slider.png")} />
+        <Image source={event?.image} style={styles.image} />
         <View style={styles.body}>
           <View style={styles.header}>
             <View style={styles.details}>
@@ -50,7 +49,7 @@ const EventDetails = ({
               </View>
               <View>
                 <Text style={styles.mainText}>{event?.prep_time}</Text>
-                <Text style={styles.subText}>Date</Text>
+                <Text style={styles.subText}>Prep time</Text>
               </View>
             </View>
             <View style={styles.dateTimeItem}>
@@ -59,15 +58,12 @@ const EventDetails = ({
               </View>
               <View>
                 <Text style={styles.mainText}>{event?.cook_time}</Text>
-                <Text style={styles.subText}>Time</Text>
+                <Text style={styles.subText}>Cook time</Text>
               </View>
             </View>
           </View>
           <Text style={styles.heading}>Event info</Text>
           <Text style={styles.description}>{event?.instructions}</Text>
-        </View>
-        <View style={styles.button}>
-          <Button buttonText={"Book Event"} />
         </View>
       </ScrollView>
     </View>;
