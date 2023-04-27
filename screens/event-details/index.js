@@ -19,15 +19,8 @@ const EventDetails = ({
   const [event, setEvent] = useState({});
   console.log(selectedRecipe);
   useEffect(() => {
-    setEvent({
-      name: "Event name 2022",
-      location: "New York, USA",
-      distance: "10 miles away",
-      date: "28 Sep",
-      time: "11:00 AM",
-      info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat tellus a mattis ornare. Fusce sit amet libero id est iaculis hendrerit in quis nibh. \n \nProin porttitor velit nec purus consequat hendrerit. Aenean vel volutpat metus. Ut ullamcorper arcu tellus, non semper nisl lobortis vitae. Nulla sit amet risus risus. Vestibulum euismod accumsan nulla."
-    });
-  }, [itemID]);
+    setEvent(selectedRecipe);
+  }, [selectedRecipe]);
   return <View style={styles.container}>
       <ScrollView>
         <Image source={require("./assets/image.png")} style={styles.image} />
@@ -35,11 +28,11 @@ const EventDetails = ({
         <View style={styles.body}>
           <View style={styles.header}>
             <View style={styles.details}>
-              <Text style={styles.name}>{Recipes?.[0]?.title}</Text>
+              <Text style={styles.name}>{event?.title}</Text>
               <View style={styles.location}>
                 <Image source={require("./assets/locationIcon.png")} style={styles.locationIcon} />
                 <Text style={styles.locationText}>
-                  {event.location} - {event.distance}
+                  Rating : {event?.rating}
                 </Text>
               </View>
             </View>
@@ -56,7 +49,7 @@ const EventDetails = ({
                 <Image style={styles.icon} source={require("./assets/calendarIcon.png")} />
               </View>
               <View>
-                <Text style={styles.mainText}>{event.date}</Text>
+                <Text style={styles.mainText}>{event?.prep_time}</Text>
                 <Text style={styles.subText}>Date</Text>
               </View>
             </View>
@@ -65,13 +58,13 @@ const EventDetails = ({
                 <Image style={styles.icon} source={require("./assets/clockIcon.png")} />
               </View>
               <View>
-                <Text style={styles.mainText}>{event.time}</Text>
+                <Text style={styles.mainText}>{event?.cook_time}</Text>
                 <Text style={styles.subText}>Time</Text>
               </View>
             </View>
           </View>
           <Text style={styles.heading}>Event info</Text>
-          <Text style={styles.description}>{event.info}</Text>
+          <Text style={styles.description}>{event?.instructions}</Text>
         </View>
         <View style={styles.button}>
           <Button buttonText={"Book Event"} />
