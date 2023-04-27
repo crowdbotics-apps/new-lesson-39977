@@ -12,19 +12,18 @@ const Row = ({
   const navigation = useNavigation();
   return <Pressable onPress={() => {
     navigation.navigate("eventDetails", {
-      itemID: item.id
+      itemID: item.id,
+      selectedRecipe: item
     });
   }}>
       <View style={styles.row}>
         <View style={styles.rowContent}>
-          <Text style={styles.textHeading1}>{item?.title}</Text>
-          <Text style={styles.textHeading2}>{item?.rating}</Text>
-          <Text style={styles.textHeading3}>{item?.cook_time}</Text>
-          <Text style={styles.textHeading4}>Heading 4</Text>
+          <Text style={styles.textHeading1}>Title : {item?.title}</Text>
+          <Text style={styles.textHeading3}>Rating : {item?.rating}</Text>
+          <Text style={styles.textHeading4}>Prep time : {item?.prep_time} </Text>
+          <Text style={styles.textHeading4}>Cook time : {item?.cook_time}</Text>
           <Text style={styles.textDescription}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry standard dummy text ever
-            since the 1500s
+            {item?.instructions} 
           </Text>
         </View>
       </View>
@@ -60,7 +59,8 @@ const ManyRows = () => {
       <FlatList data={Recipes} renderItem={({
       item
     }) => <Row item={item} />} keyExtractor={item => item.id} />
-    <Text style={styles.tbkuVFTK}>Lorem ipsum…</Text></View>;
+      <Text style={styles.tbkuVFTK}>Lorem ipsum…</Text>
+    </View>;
 };
 
 const styles = StyleSheet.create({

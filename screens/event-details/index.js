@@ -10,13 +10,15 @@ const EventDetails = ({
 }) => {
   const navigation = useNavigation();
   const {
-    itemID
+    itemID,
+    selectedRecipe
   } = route.params || {};
   const {
     entities: Recipes
   } = useSelector(state => state.Recipes);
   const dispatch = useDispatch();
   const [event, setEvent] = useState({});
+  console.log(selectedRecipe);
   useEffect(() => {
     setEvent({
       name: "Event name 2022",
