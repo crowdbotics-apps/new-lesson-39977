@@ -39,13 +39,13 @@ const EventDetails = ({
             navigation.navigate("addCardDetails");
           }}>
               <Image source={require("./assets/giftIcon.png")} style={styles.giftIcon} />
-              <Text style={styles.btnText}>Donate</Text>
+              <Text style={styles.btnText}>Add</Text>
             </Pressable>
           </View>
           <View style={styles.dateTimeContainer}>
             <View style={styles.dateTimeItem}>
               <View style={styles.iconContainer}>
-                <Image style={styles.icon} source={require("./assets/calendarIcon.png")} />
+                <Image style={styles.icon} source={require("./assets/clockIcon.png")} />
               </View>
               <View>
                 <Text style={styles.mainText}>{event?.prep_time}</Text>
@@ -62,7 +62,7 @@ const EventDetails = ({
               </View>
             </View>
           </View>
-          <Text style={styles.heading}>Event info</Text>
+          <Text style={styles.heading}>Recipe instructions</Text>
           <Text style={styles.description}>{event?.instructions}</Text>
         </View>
       </ScrollView>
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   image: {
-    width: "100%",
-    height: 200
+    width: 350,
+    height: 350
   },
   scroller: {
     width: 50,
