@@ -1,5 +1,4 @@
 import { useNavigation } from "@react-navigation/native";
-import { api_v1_recipe_retrieve } from "../../store/newlessonAPI/recipes.slice.js";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
@@ -28,9 +27,6 @@ const EventDetails = ({
       time: "11:00 AM",
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat tellus a mattis ornare. Fusce sit amet libero id est iaculis hendrerit in quis nibh. \n \nProin porttitor velit nec purus consequat hendrerit. Aenean vel volutpat metus. Ut ullamcorper arcu tellus, non semper nisl lobortis vitae. Nulla sit amet risus risus. Vestibulum euismod accumsan nulla."
     });
-    dispatch(api_v1_recipe_retrieve({
-      id: itemID
-    }));
   }, [itemID]);
   return <View style={styles.container}>
       <ScrollView>
