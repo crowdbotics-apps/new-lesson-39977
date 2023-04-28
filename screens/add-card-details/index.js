@@ -1,8 +1,8 @@
 import { api_v1_recipe_create } from "../../store/newlessonAPI/recipes.slice.js";
 import { useDispatch } from "react-redux";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
-import {Picker} from '@react-native-picker/picker';
+import { Picker } from "@react-native-picker/picker";
 
 const AddCardDetailsScreen = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,9 @@ const AddCardDetailsScreen = () => {
   const [rating, setRating] = useState("");
   const [image, setImage] = useState("");
   const [selectedCategory, setSelectedCategory] = useState();
+  useEffect(() => {
+    dispatch(api_v1_recipecategory_list());
+  }, []);
 
   const onSubmit = () => {
     console.log("submited");
@@ -37,12 +40,7 @@ const AddCardDetailsScreen = () => {
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Category</Text>
-            <Picker
-              selectedValue={selectedCategory}
-              onValueChange={(itemValue, itemIndex) =>
-                setSelectedCategory(itemValue)
-              }
-            >
+            <Picker selectedValue={selectedCategory} onValueChange={(itemValue, itemIndex) => setSelectedCategory(itemValue)}>
               <Picker.Item label="Dissert" value="Dissert" />
               <Picker.Item label="Breakfast" value="Breakfast" />
             </Picker>
