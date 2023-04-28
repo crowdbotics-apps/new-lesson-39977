@@ -2,6 +2,7 @@ import { api_v1_recipe_create } from "../../store/newlessonAPI/recipes.slice.js"
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
+import {Picker} from '@react-native-picker/picker';
 
 const AddCardDetailsScreen = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const AddCardDetailsScreen = () => {
   const [cookTime, setCookTime] = useState("");
   const [rating, setRating] = useState("");
   const [image, setImage] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState();
 
   const onSubmit = () => {
     console.log("submited");
@@ -32,6 +34,18 @@ const AddCardDetailsScreen = () => {
             <Text style={styles.inputText}>Recipe add</Text>
             <Text style={styles.inputText}>Recipe title</Text>
             <TextInput style={styles.input} onChangeText={text => setTitle(text)} placeholder="Enter recipe name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} value={title} clearTextOnFocus={true} editable={true} />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.inputText}>Category</Text>
+            <Picker
+              selectedValue={selectedCategory}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedCategory(itemValue)
+              }
+            >
+              <Picker.Item label="Dissert" value="Dissert" />
+              <Picker.Item label="Breakfast" value="Breakfast" />
+            </Picker>
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>Instuctions</Text>
