@@ -1,93 +1,95 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import { apiService } from "./api"
-export const api_v1_recipe_list = createAsyncThunk(
-  "recipes/api_v1_recipe_list",
+export const api_v1_recipecategory_list = createAsyncThunk(
+  "recipeCategories/api_v1_recipecategory_list",
   async payload => {
-    const response = await apiService.api_v1_recipe_list(payload)
+    const response = await apiService.api_v1_recipecategory_list(payload)
     return response.data
   }
 )
-export const api_v1_recipe_create = createAsyncThunk(
-  "recipes/api_v1_recipe_create",
+export const api_v1_recipecategory_create = createAsyncThunk(
+  "recipeCategories/api_v1_recipecategory_create",
   async payload => {
-    const response = await apiService.api_v1_recipe_create(payload)
+    const response = await apiService.api_v1_recipecategory_create(payload)
     return response.data
   }
 )
-export const api_v1_recipe_retrieve = createAsyncThunk(
-  "recipes/api_v1_recipe_retrieve",
+export const api_v1_recipecategory_retrieve = createAsyncThunk(
+  "recipeCategories/api_v1_recipecategory_retrieve",
   async payload => {
-    const response = await apiService.api_v1_recipe_retrieve(payload)
+    const response = await apiService.api_v1_recipecategory_retrieve(payload)
     return response.data
   }
 )
-export const api_v1_recipe_update = createAsyncThunk(
-  "recipes/api_v1_recipe_update",
+export const api_v1_recipecategory_update = createAsyncThunk(
+  "recipeCategories/api_v1_recipecategory_update",
   async payload => {
-    const response = await apiService.api_v1_recipe_update(payload)
+    const response = await apiService.api_v1_recipecategory_update(payload)
     return response.data
   }
 )
-export const api_v1_recipe_partial_update = createAsyncThunk(
-  "recipes/api_v1_recipe_partial_update",
+export const api_v1_recipecategory_partial_update = createAsyncThunk(
+  "recipeCategories/api_v1_recipecategory_partial_update",
   async payload => {
-    const response = await apiService.api_v1_recipe_partial_update(payload)
+    const response = await apiService.api_v1_recipecategory_partial_update(
+      payload
+    )
     return response.data
   }
 )
-export const api_v1_recipe_destroy = createAsyncThunk(
-  "recipes/api_v1_recipe_destroy",
+export const api_v1_recipecategory_destroy = createAsyncThunk(
+  "recipeCategories/api_v1_recipecategory_destroy",
   async payload => {
-    const response = await apiService.api_v1_recipe_destroy(payload)
+    const response = await apiService.api_v1_recipecategory_destroy(payload)
     return response.data
   }
 )
 const initialState = { entities: [], api: { loading: "idle", error: null } }
-const recipesSlice = createSlice({
-  name: "recipes",
+const recipeCategoriesSlice = createSlice({
+  name: "recipeCategories",
   initialState,
   reducers: {},
   extraReducers: {
-    [api_v1_recipe_list.pending]: (state, action) => {
+    [api_v1_recipecategory_list.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [api_v1_recipe_list.fulfilled]: (state, action) => {
+    [api_v1_recipecategory_list.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities = action.payload
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_list.rejected]: (state, action) => {
+    [api_v1_recipecategory_list.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_create.pending]: (state, action) => {
+    [api_v1_recipecategory_create.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [api_v1_recipe_create.fulfilled]: (state, action) => {
+    [api_v1_recipecategory_create.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities.push(action.payload)
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_create.rejected]: (state, action) => {
+    [api_v1_recipecategory_create.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_retrieve.pending]: (state, action) => {
+    [api_v1_recipecategory_retrieve.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [api_v1_recipe_retrieve.fulfilled]: (state, action) => {
+    [api_v1_recipecategory_retrieve.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities = [
           ...state.entities.filter(record => record.id !== action.payload.id),
@@ -96,18 +98,18 @@ const recipesSlice = createSlice({
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_retrieve.rejected]: (state, action) => {
+    [api_v1_recipecategory_retrieve.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_update.pending]: (state, action) => {
+    [api_v1_recipecategory_update.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [api_v1_recipe_update.fulfilled]: (state, action) => {
+    [api_v1_recipecategory_update.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities = state.entities.map(record =>
           record.id === action.payload.id ? action.payload : record
@@ -115,18 +117,18 @@ const recipesSlice = createSlice({
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_update.rejected]: (state, action) => {
+    [api_v1_recipecategory_update.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_partial_update.pending]: (state, action) => {
+    [api_v1_recipecategory_partial_update.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [api_v1_recipe_partial_update.fulfilled]: (state, action) => {
+    [api_v1_recipecategory_partial_update.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities = state.entities.map(record =>
           record.id === action.payload.id ? action.payload : record
@@ -134,18 +136,18 @@ const recipesSlice = createSlice({
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_partial_update.rejected]: (state, action) => {
+    [api_v1_recipecategory_partial_update.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_destroy.pending]: (state, action) => {
+    [api_v1_recipecategory_destroy.pending]: (state, action) => {
       if (state.api.loading === "idle") {
         state.api.loading = "pending"
       }
     },
-    [api_v1_recipe_destroy.fulfilled]: (state, action) => {
+    [api_v1_recipecategory_destroy.fulfilled]: (state, action) => {
       if (state.api.loading === "pending") {
         state.entities = state.entities.filter(
           record => record.id !== action.meta.arg?.id
@@ -153,7 +155,7 @@ const recipesSlice = createSlice({
         state.api.loading = "idle"
       }
     },
-    [api_v1_recipe_destroy.rejected]: (state, action) => {
+    [api_v1_recipecategory_destroy.rejected]: (state, action) => {
       if (state.api.loading === "pending") {
         state.api.error = action.error
         state.api.loading = "idle"
@@ -162,11 +164,11 @@ const recipesSlice = createSlice({
   }
 })
 export default {
-  api_v1_recipe_list,
-  api_v1_recipe_create,
-  api_v1_recipe_retrieve,
-  api_v1_recipe_update,
-  api_v1_recipe_partial_update,
-  api_v1_recipe_destroy,
-  slice: recipesSlice
+  api_v1_recipecategory_list,
+  api_v1_recipecategory_create,
+  api_v1_recipecategory_retrieve,
+  api_v1_recipecategory_update,
+  api_v1_recipecategory_partial_update,
+  api_v1_recipecategory_destroy,
+  slice: recipeCategoriesSlice
 }
