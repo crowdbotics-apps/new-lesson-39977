@@ -35,7 +35,7 @@ class LoginViewSet(ViewSet):
 
 class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
-    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    authentication_classes = (authentication.BasicAuthentication, authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Recipe.objects.all()
 
 class RecipeCategoryViewSet(viewsets.ModelViewSet):
