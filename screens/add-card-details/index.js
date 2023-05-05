@@ -1,7 +1,7 @@
 import { api_v1_recipecategory_list } from "../../store/newlessonAPI/recipeCategories.slice";
 import { useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
-import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput } from "react-native";
+import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 const AddCardDetailsScreen = () => {
@@ -16,6 +16,20 @@ const AddCardDetailsScreen = () => {
   useEffect(() => {
     dispatch(api_v1_recipecategory_list());
   }, []);
+
+  const onSubmit = () => {
+    console.log("submited");
+    dispatch(api_v1_recipe_create({
+      csrftoken: 'IRbVC2wgpWWNpjvq0xXfeBwIi2RVCGILRCbGP3PmpMbOB21xOj9OFXmq9SW2iJEU',
+      title,
+      instructions,
+      prep_time: prepTime,
+      cook_time: cookTime,
+      rating,
+      image
+    }));
+  };
+
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}></View>
@@ -63,9 +77,11 @@ const AddCardDetailsScreen = () => {
           <View style={styles.inputContainer}></View>
           <View style={styles.inputContainer}></View>
         </View>
+        <Pressable style={styles.btn} onPress={onSubmit}>
         <View style={styles.btnContainer}>
           <Text style={styles.btnText}>Update</Text>
         </View>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>;
 };
