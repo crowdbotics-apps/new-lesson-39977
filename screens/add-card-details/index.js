@@ -1,6 +1,6 @@
 import { api_v1_recipecategory_list } from "../../store/newlessonAPI/recipeCategories.slice";
 import { useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
@@ -64,9 +64,7 @@ const AddCardDetailsScreen = () => {
           <View style={styles.inputContainer}></View>
         </View>
         <View style={styles.btnContainer}>
-          
-            <Text style={styles.btnText}>Update</Text>
-          
+          <Text style={styles.btnText}>Update</Text>
         </View>
       </ScrollView>
     </SafeAreaView>;
