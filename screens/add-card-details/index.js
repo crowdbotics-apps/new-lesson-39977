@@ -20,7 +20,7 @@ const AddCardDetailsScreen = () => {
   const onSubmit = () => {
     console.log("submited");
     dispatch(api_v1_recipe_create({
-      csrftoken: 'IRbVC2wgpWWNpjvq0xXfeBwIi2RVCGILRCbGP3PmpMbOB21xOj9OFXmq9SW2iJEU',
+      csrftoken: "IRbVC2wgpWWNpjvq0xXfeBwIi2RVCGILRCbGP3PmpMbOB21xOj9OFXmq9SW2iJEU",
       title,
       instructions,
       prep_time: prepTime,
@@ -78,9 +78,9 @@ const AddCardDetailsScreen = () => {
           <View style={styles.inputContainer}></View>
         </View>
         <Pressable style={styles.btn} onPress={onSubmit}>
-        <View style={styles.btnContainer}>
-          <Text style={styles.btnText}>Update</Text>
-        </View>
+          <View style={styles.btnContainer}>
+            <Text style={styles.btnText}>Update</Text>
+          </View>
         </Pressable>
       </ScrollView>
     </SafeAreaView>;
@@ -135,6 +135,16 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold"
+  },
+  btn: {
+    backgroundColor: "black",
+    height: 50,
+    width: "100%",
+    padding: 10,
+    paddingHorizontal: 25,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 export default AddCardDetailsScreen;
