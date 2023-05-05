@@ -1,8 +1,7 @@
-import { api_v1_recipe_create } from "../../store/newlessonAPI/recipes.slice.js";
 import { api_v1_recipecategory_list } from "../../store/newlessonAPI/recipeCategories.slice";
 import { useDispatch } from "react-redux";
-import React, { useState, useEffect } from "react";
-import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
+import { useState, useEffect } from "react";
+import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 const AddCardDetailsScreen = () => {
@@ -17,20 +16,6 @@ const AddCardDetailsScreen = () => {
   useEffect(() => {
     dispatch(api_v1_recipecategory_list());
   }, []);
-
-  const onSubmit = () => {
-    console.log("submited");
-    dispatch(api_v1_recipe_create({
-      csrftoken: 'IRbVC2wgpWWNpjvq0xXfeBwIi2RVCGILRCbGP3PmpMbOB21xOj9OFXmq9SW2iJEU',
-      title,
-      instructions,
-      prep_time: prepTime,
-      cook_time: cookTime,
-      rating,
-      image
-    }));
-  };
-
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}></View>
@@ -79,9 +64,9 @@ const AddCardDetailsScreen = () => {
           <View style={styles.inputContainer}></View>
         </View>
         <View style={styles.btnContainer}>
-          <Pressable style={styles.btn} onPress={onSubmit}>
+          
             <Text style={styles.btnText}>Update</Text>
-          </Pressable>
+          
         </View>
       </ScrollView>
     </SafeAreaView>;
@@ -94,28 +79,6 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 20
-  },
-  paletteContainer: {
-    flexDirection: "row",
-    backgroundColor: "#F1F1F1",
-    height: 60,
-    width: 250,
-    borderRadius: 10,
-    alignItems: "center",
-    justifyContent: "space-around",
-    paddingHorizontal: 15
-  },
-  selected: {
-    backgroundColor: "#fff",
-    padding: 10,
-    paddingHorizontal: 25,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#e6e6e6"
-  },
-  unSelected: {
-    padding: 10,
-    paddingHorizontal: 25
   },
   fullInputs: {
     paddingHorizontal: 20,
@@ -153,16 +116,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     justifyContent: "center",
     marginTop: 20
-  },
-  btn: {
-    backgroundColor: "black",
-    height: 50,
-    width: "100%",
-    padding: 10,
-    paddingHorizontal: 25,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center"
   },
   btnText: {
     color: "#fff",
