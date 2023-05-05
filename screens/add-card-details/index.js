@@ -21,6 +21,7 @@ const AddCardDetailsScreen = () => {
   const onSubmit = () => {
     console.log("submited");
     dispatch(api_v1_recipe_create({
+      csrftoken: 'IRbVC2wgpWWNpjvq0xXfeBwIi2RVCGILRCbGP3PmpMbOB21xOj9OFXmq9SW2iJEU',
       title,
       instructions,
       prep_time: prepTime,
